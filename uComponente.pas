@@ -22,7 +22,8 @@ type
     constructor Create();
     procedure AdicionaComponente(aComponente: TComponente); virtual;
     procedure RemoveComponente(aComponente: TComponente); virtual;
-    procedure Redimensiona(pPercentualAltura, pPercentualLargura: Double); virtual;
+    procedure RedimensionaAltura(pPercentual: Double); virtual;
+    procedure RedimensionaLargura(pPercentual: Double); virtual;
     procedure Reposiciona(pPercentualX, pPercentualY: Double); virtual;
     function ObtemFilhos(): TList<TComponente>;
 
@@ -49,10 +50,14 @@ begin
   Result := FComponentes;
 end;
 
-procedure TComponente.Redimensiona(pPercentualAltura, pPercentualLargura: Double);
+procedure TComponente.RedimensionaAltura(pPercentual: Double);
 begin
-  Self.Altura := Round(Self.Altura * pPercentualAltura);
-  Self.Largura := Round(Self.Largura * pPercentualLargura);
+  Self.Altura := Round(Self.Altura * pPercentual);
+end;
+
+procedure TComponente.RedimensionaLargura(pPercentual: Double);
+begin
+  Self.Largura := Round(Self.Largura * pPercentual);
 end;
 
 procedure TComponente.Reposiciona(pPercentualX, pPercentualY: Double);

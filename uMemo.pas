@@ -9,7 +9,8 @@ type
 
   TMemo = class(TComponente)
     public
-      procedure Redimensiona(pPercentualAltura, pPercentualLargura: Double); override;
+      procedure RedimensionaLargura(pPercentual: Double); override;
+      procedure RedimensionaAltura(pPercentual: Double); override;
       procedure Reposiciona(pPercentualX, pPercentualY: Double); override;
   end;
 
@@ -17,7 +18,13 @@ implementation
 
 { TMemo }
 
-procedure TMemo.Redimensiona(pPercentualAltura, pPercentualLargura: Double);
+procedure TMemo.RedimensionaAltura(pPercentual: Double);
+begin
+  inherited;
+
+end;
+
+procedure TMemo.RedimensionaLargura(pPercentual: Double);
 begin
   inherited;
 

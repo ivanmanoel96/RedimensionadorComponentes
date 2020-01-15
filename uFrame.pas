@@ -9,20 +9,31 @@ type
 
   TFrame = class(TComponente)
     public
-      procedure Redimensiona(pPercentualAltura, pPercentualLargura: Double); override;
+      procedure RedimensionaLargura(pPercentual: Double); override;
+      procedure RedimensionaAltura(pPercentual: Double); override;
       procedure Reposiciona(pPercentualX, pPercentualY: Double); override;
   end;
 
 implementation
 
-procedure TFrame.Redimensiona(pPercentualAltura, pPercentualLargura: Double);
+procedure TFrame.RedimensionaAltura(pPercentual: Double);
 var
   aComponente: TComponente;
 begin
   inherited;
 
   for aComponente in Self.ObtemFilhos() do
-    aComponente.Redimensiona(pPercentualAltura, pPercentualLargura);
+    aComponente.RedimensionaAltura(pPercentual);
+end;
+
+procedure TFrame.RedimensionaLargura(pPercentual: Double);
+var
+  aComponente: TComponente;
+begin
+  inherited;
+
+  for aComponente in Self.ObtemFilhos() do
+    aComponente.RedimensionaLargura(pPercentual);
 end;
 
 procedure TFrame.Reposiciona(pPercentualX, pPercentualY: Double);

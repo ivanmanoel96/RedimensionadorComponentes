@@ -9,15 +9,22 @@ type
 
   TBotao = class(TComponente)
     public
-      procedure Redimensiona(pPercentualAltura, pPercentualLargura: Double); override;
+      procedure RedimensionaLargura(pPercentual: Double); override;
+      procedure RedimensionaAltura(pPercentual: Double); override;
       procedure Reposiciona(pPercentualX, pPercentualY: Double); override;
   end;
 
 implementation
 
-procedure TBotao.Redimensiona(pPercentualAltura, pPercentualLargura: Double);
+procedure TBotao.RedimensionaAltura(pPercentual: Double);
 begin
-  Self.Largura := Round(Self.Largura * pPercentualLargura);
+  //Botao nao redimensiona altura
+end;
+
+procedure TBotao.RedimensionaLargura(pPercentual: Double);
+begin
+  inherited;
+
 end;
 
 procedure TBotao.Reposiciona(pPercentualX, pPercentualY: Double);

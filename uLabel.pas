@@ -9,15 +9,19 @@ type
 
   TLabel = class(TComponente)
     public
-      procedure Redimensiona(pPercentualAltura, pPercentualLargura: Double); override;
+      procedure RedimensionaLargura(pPercentual: Double); override;
+      procedure RedimensionaAltura(pPercentual: Double); override;
       procedure Reposiciona(pPercentualX, pPercentualY: Double); override;
   end;
 
 implementation
 
-{ TLabel }
+procedure TLabel.RedimensionaAltura(pPercentual: Double);
+begin
+  //Label não é redimensionado
+end;
 
-procedure TLabel.Redimensiona(pPercentualAltura, pPercentualLargura: Double);
+procedure TLabel.RedimensionaLargura(pPercentual: Double);
 begin
   //Label não é redimensionado
 end;
